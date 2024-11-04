@@ -1,0 +1,89 @@
+.about_section {
+  margin-top: 170rem;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.content_wrapper {
+  display: flex;
+}
+
+/* Галерея фотографий */
+.photo_gallery {
+  width: 50%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+.card {
+  background-color: rgba(237, 208, 222, 1);
+  width: 183rem;
+  height: 212rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 14rem;
+
+  img {
+    width: 84%;
+    height: 71%;
+    object-fit: cover;
+  }
+}
+.card_1 {
+  transform: rotate(-10deg);
+  box-shadow: -1px -1px 20px rgb(105, 104, 104);
+}
+.card_2 {
+  transform: rotate(20deg);
+  left: 140rem;
+  top: -30rem;
+  box-shadow: -2px -2px 10px rgb(105, 104, 104);
+}
+.card_3 {
+  transform: rotate(-20deg);
+  top: -90rem;
+  z-index: -1;
+  box-shadow: -1px -1px 20px rgb(105, 104, 104);
+}
+/* Декоративные изображения */
+.decor {
+  position: absolute;
+}
+
+.flower {
+  top: -20rem;
+  left: 10rem;
+  width: 300rem;
+}
+
+.cookie {
+  bottom: 30rem;
+  right: 120rem;
+  width: 100rem;
+}
+
+/* Текстовый блок */
+.text_content {
+  width: 50%;
+  padding-top: 43rem;
+
+  .subheading {
+    font-size: 22rem;
+    color: #c79eb2;
+    font-family: 'Roboto flex';
+    text-align: left;
+    font-weight: bold;
+  }
+  .description {
+    margin-top: 42rem;
+    padding-left: 67rem;
+    font-family: 'Roboto flex';
+    font-weight: bold;
+    font-size: 13rem;
+    width: 80%;
+    color: #747474;
+    line-height: 1.6;
+  }
+}

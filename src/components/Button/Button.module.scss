@@ -1,0 +1,29 @@
+.button {
+  padding: 5rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 405rem;
+  height: 55rem;
+  font-size: 16rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Roboto slab';
+  letter-spacing: 4rem;
+  color: #ffffff;
+  background-color: rgba(212, 169, 190, 1);
+}
+.telegram {
+  background-image: url('../../images/telegram.svg');
+}
+.whatsapp {
+  background-image: url('../../images/whatsapp.svg');
+}
+
+.svg_background {
+  width: 16rem; /* Попробуйте уменьшить размер, если иконка слишком большая */
+  height: 16rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

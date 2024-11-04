@@ -1,0 +1,50 @@
+.about_section {
+  margin-top: 170rem;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+.content_wrapper {
+  display: flex;
+}
+
+/* Галерея фотографий */
+.photo {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 60%;
+    object-fit: cover;
+    height: 95%;
+  }
+}
+
+/* Текстовый блок */
+.text_content {
+  width: 50%;
+  padding-top: 43rem;
+
+  .subheading {
+    font-size: 22rem;
+    color: #c79eb2;
+    font-family: 'Roboto flex';
+    text-align: left;
+    font-weight: bold;
+  }
+  .description {
+    margin-top: 42rem;
+    padding-left: 67rem;
+    font-family: 'Roboto flex';
+    font-weight: bold;
+    font-size: 13rem;
+    width: 80%;
+    color: #747474;
+    line-height: 1.6;
+  }
+  .btn_container {
+    margin-top: 27rem;
+    padding-left: 67rem;
+  }
+}

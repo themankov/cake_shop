@@ -1,0 +1,60 @@
+.contact_container {
+  display: flex;
+}
+
+/* Левая колонка: Связаться со мной */
+.contact_info {
+  width: 50%;
+  background-color: #271616;
+  color: #ffffff;
+}
+
+.contact_info .description {
+  padding-left: 60rem;
+  font-size: 13rem;
+  font-family: 'Roboto flex';
+  font-weight: bold;
+  color: #747474;
+  margin-top: 54rem;
+  width: 70%;
+}
+
+/* Правая колонка: Контакты */
+.contact_details {
+  width: 50%;
+  ul {
+    list-style: none;
+    margin: 54rem;
+    display: flex;
+    flex-direction: column;
+    gap: 26rem;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    gap: 13rem;
+    h1,
+    a {
+      font-size: 20rem;
+      color: #000;
+      font-family: 'Roboto slab';
+      font-weight: 500;
+    }
+  }
+}
+
+.contact_details .icon {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #c78283; /* Цвет иконок */
+}
+
+.contact_details a {
+  color: #c78283;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact_details a:hover {
+  color: #efb7b7;
+}

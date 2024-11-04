@@ -1,0 +1,52 @@
+.header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+
+  background-color: rgba(255, 255, 255, 0.4); /* Полупрозрачный белый цвет */
+  backdrop-filter: blur(10px); /* Размытие фона */
+  -webkit-backdrop-filter: blur(10px); /* Поддержка Safari */
+  z-index: 1000;
+
+  &_logo h1 {
+    font-family: 'Dancing Script';
+    padding-left: 56rem;
+    font-weight: bold;
+    color: rgba(212, 169, 190, 1);
+    font-size: 47rem;
+    cursor: pointer;
+  }
+
+  &_nav {
+    padding-left: 31rem;
+    ul {
+      display: flex;
+      li {
+        a {
+          font-size: 14rem;
+          padding-right: 25rem;
+          font-family: 'Roboto flex';
+          text-transform: uppercase;
+          color: #000000;
+        }
+        a:hover {
+          color: rgba(161, 129, 144, 1);
+        }
+      }
+    }
+
+    a {
+      font-size: 14rem;
+      padding-right: 25rem;
+      font-family: 'Roboto flex';
+      text-transform: uppercase;
+      color: #000000;
+    }
+    a:hover {
+      color: rgba(161, 129, 144, 1);
+    }
+  }
+}

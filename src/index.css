@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+/* Основные стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: calc(0.0347vw + 0.04885vh);
+}
+
+body {
+  background: rgba(239, 239, 239, 1);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

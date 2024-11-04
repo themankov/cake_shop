@@ -1,0 +1,24 @@
+.section_title {
+  position: relative;
+  padding-left: 67rem;
+
+  .number {
+    font-family: 'Roboto slab';
+    font-weight: 900;
+    font-size: 100rem;
+    letter-spacing: 4%;
+    color: #d4a9be;
+  }
+
+  .text {
+    font-family: 'Roboto flex';
+    font-size: 42rem;
+    font-weight: 500;
+    letter-spacing: 9%;
+    background-color: rgba(239, 239, 239, 1);
+    padding-left: 10rem;
+    position: absolute;
+    left: 124rem;
+    top: 60rem;
+  }
+}

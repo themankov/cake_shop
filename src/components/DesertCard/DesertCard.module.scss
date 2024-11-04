@@ -1,0 +1,32 @@
+.dessert_item {
+  text-align: center;
+  height: 340rem;
+
+  .image_container {
+    width: 320rem;
+    height: 207rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      padding: 0 74rem;
+      width: 100%;
+    }
+  }
+  h3 {
+    font-size: 25rem;
+    font-family: 'Roboto flex';
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 3rem;
+  }
+  p {
+    font-size: 13rem;
+    color: rgba(116, 116, 116, 1);
+    font-weight: bold;
+    font-family: 'Roboto flex';
+    white-space: pre-line;
+  }
+}
