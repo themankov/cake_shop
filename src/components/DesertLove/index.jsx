@@ -10,8 +10,8 @@ const DesertLove = () => {
         </div>
 
         <div className={style.text_content}>
-          <SectionTitle />
-          <p className={style.subheading}>Меня зовут Анна и Я Кондитер</p>
+          <SectionTitle number={'03'} title={'Десерты с любовью'}/>
+          <p className={style.subheading}>Попробуйте десерты ручной работы в Москве</p>
           <p className={style.description}>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Mauris arcu
             quisque montes nulla placerat feugiat. Senectus nibh tempor et

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { DesertCard, SectionTitle } from '../index';
 import style from './DesertMenu.module.scss';
-const DesertMenu = () => {
+const DesertMenu = ({innerRef}) => {
   return (
-    <div className={style.dessert_menu}>
-      <SectionTitle />
+    <div className={style.dessert_menu} ref={innerRef}>
+      <SectionTitle title={'Десерт Меню'} number={'02'}/>
 
       <div className={style.dessert_grid}>
         <DesertCard />

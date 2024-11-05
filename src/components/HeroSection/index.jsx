@@ -9,9 +9,9 @@ import blueberry from '../../images/blueberry.png';
 import blueberry2 from '../../images/blueberry2.png';
 import rasberry from '../../images/rasberry.png';
 import blackberry from '../../images/blackberry.png';
-const HeroSection = () => {
+const HeroSection = ({innerRef}) => {
   return (
-    <div className={style.hero}>
+    <div className={style.hero} ref={innerRef}>
       <h2>Торты на заказ в Москве</h2>
       <h1 className={style.hero_title}>
         CAKES <br /> SMAKAEVA

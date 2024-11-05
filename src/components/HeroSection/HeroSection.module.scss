@@ -53,17 +53,58 @@
     width: 260rem;
     transform: scale(0.8);
     top: -25rem;
-    left: -30rem;
+    left:0;
+    transition: transform 2s ease-in-out;
+    animation: slideIn3 1.5s forwards ease-in-out, float  6s infinite ease-in-out 1s;
+  }
+  @keyframes slideIn3 {
+    from {
+      left: -100%;
+    }
+    to {
+      left: -30rem;
+    }
   }
   .macaron_white {
     top: 210rem;
-    left: 150rem;
+    left: 0;
     width: 283rem;
+    transition: transform 2s ease-in-out;
+    animation: slideIn 1.7s forwards ease-in-out, float  6s infinite ease-in-out .5s;
+  }
+  @keyframes slideIn2 {
+    from {
+      left:-100%;
+    }
+    to {
+      left:150rem
+
+    }
   }
   .macaron_rose {
     bottom: -70rem;
-    left: 92rem;
     width: 413rem;
+    left:0;
+    animation: slideIn 1.5s ease-out forwards,float  6s infinite ease-in-out .7s;
+  }
+  @keyframes slideIn {
+    0%{
+      left: -100%;
+    }
+    87%{
+      left: 110rem;
+    }
+    to{
+      left: 92rem;
+    }
+  }
+  @keyframes float {
+    0%, 100% {
+      transform: rotate(2deg) scale(1);
+    }
+    50% {
+      transform:  rotate(-2deg) scale(1.02); /* Подъем вверх и небольшое увеличение */
+    }
   }
   .cake {
     bottom: 0rem;

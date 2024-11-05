@@ -32,7 +32,7 @@ const Testimonials = () => {
         </div>
 
         <div className={style.text_content}>
-          <SectionTitle />
+          <SectionTitle title={'Отзывы клиентов'}  number={'05'}/>
           <p className={style.subheading}>Люди любят десерты!</p>
           <p className={style.description}>
             {testimonialsData[selectedItem].review}

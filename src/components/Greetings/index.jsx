@@ -1,15 +1,14 @@
 import { SectionTitle } from '../index';
 import style from './Greetings.module.scss';
-
 import girl from '../../images/girl.jpg';
 import cake2 from '../../images/cake2.jpg';
 import pancakes from '../../images/pancakes.png';
 import donut from '../../images/donut.png';
 import flower from '../../images/flower.png';
 
-const Greetings = () => {
+const Greetings = ({innerRef}) => {
   return (
-    <div className={style.about_section}>
+    <div className={style.about_section} ref={innerRef}>
       <div className={style.content_wrapper}>
         <div className={style.photo_gallery}>
           <img
@@ -34,7 +33,7 @@ const Greetings = () => {
         </div>
 
         <div className={style.text_content}>
-          <SectionTitle />
+          <SectionTitle number={'01'} title={'Познакомимся'}/>
           <p className={style.subheading}>Меня зовут Анна и Я Кондитер</p>
           <p className={style.description}>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Mauris arcu

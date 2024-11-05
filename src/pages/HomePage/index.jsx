@@ -1,3 +1,4 @@
+import { createRef, useEffect, useState } from 'react';
 import {
   Contacts,
   DesertLove,
@@ -10,16 +11,32 @@ import {
 } from '../../components';
 
 const HomePage = () => {
+  const [selectedLink, setSelectedLink] = useState('Главная');
+  const navigationData = [
+    'Главная',
+    'Начинки тортов',
+    'Обо мне',
+    'Контакты',
+  ];
+  const refs = navigationData.reduce((acc, value) => {
+    acc[value] = createRef();
+    return acc;
+  }, {});
+  useEffect(() => {
+    refs[selectedLink].current.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }, [selectedLink]);
   return (
     <>
-      <Header />
-      <HeroSection />
-      <Greetings />
-      <DesertMenu />
+      <Header data={navigationData} setSelectedLink={setSelectedLink} innerRef={refs['Главная']}/>
+      <HeroSection innerRef={refs['Главная']}/>
+      <Greetings innerRef={refs['Обо мне']}/>
+      <DesertMenu innerRef={refs['Начинки тортов']}/>
       <DesertLove />
       <Goal />
       <Testimonials />
-      <Contacts />
+      <Contacts innerRef={refs['Контакты']}/>
     </>
   );
 };

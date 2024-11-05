@@ -1,26 +1,33 @@
-import { NavLink } from 'react-router-dom';
+
 import style from './Header.module.scss';
-const navMenu = [
-  ['Главная', '/'],
-  ['Начинки тортов', '/menu'],
-  ['Обо мне', '/about'],
-  ['Контакты', '/contacts'],
-];
-const Header = () => {
+import { useState } from 'react';
+
+const Header = ({data,  setSelectedLink, innerRef}) => {
+  const [showBar, setShowBar] = useState(false);
+  const showNavBar = () => {
+    setShowBar((state) => {
+      return !state;
+    });
+  };
+  const dataLi = data.map((item, index, arr) => {
+    return (
+      <li
+        onClick={() => {
+          setSelectedLink(item);
+        }}
+      >
+        {item}
+      </li>
+    );
+  });
   return (
     <header className={style.header}>
       <div className={style.header_logo}>
-        <h1>Cakes Smakaeva</h1>
+        <h1 >Cakes Smakaeva</h1>
       </div>
       <nav className={style.header_nav}>
         <ul>
-          {navMenu.map((item, index) => (
-            <li key={index}>
-              <NavLink to={item[1]} activeClassName={style.activeLink}>
-                {item[0]}
-              </NavLink>
-            </li>
-          ))}
+          {dataLi}
         </ul>
       </nav>
     </header>
