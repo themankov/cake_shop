@@ -58,10 +58,13 @@
     animation: slideIn3 1.5s forwards ease-in-out, float  6s infinite ease-in-out 1s;
   }
   @keyframes slideIn3 {
-    from {
+    0%{
       left: -100%;
     }
-    to {
+    87%{
+      left: -10rem;
+    }
+    100%{
       left: -30rem;
     }
   }
@@ -70,13 +73,16 @@
     left: 0;
     width: 283rem;
     transition: transform 2s ease-in-out;
-    animation: slideIn 1.7s forwards ease-in-out, float  6s infinite ease-in-out .5s;
+    animation: slideIn2 1.7s forwards ease-in-out, float  6s infinite ease-in-out .5s;
   }
   @keyframes slideIn2 {
-    from {
+    0% {
       left:-100%;
     }
-    to {
+    87%{
+      left: 170rem;
+    }
+    100% {
       left:150rem
 
     }
@@ -111,27 +117,90 @@
     right: 0;
     z-index: -1;
     width: 500rem;
+    animation: slideIn4 1.5s ease-in-out;
+  }
+  @keyframes slideIn4 {
+    0% {
+      right:-100%;
+    }
+   
+    100% {
+      right: 0;
+
+    }
   }
   .blueberry {
     bottom: -40rem;
     right: 150rem;
     width: 123rem;
+    animation: slideIn5 1.5s ease-in-out,  float  6s infinite ease-in-out 1.5s;
+  }
+  @keyframes slideIn5 {
+    0% {
+      right:-100%;
+    }
+   87%{
+    right: 170rem;
+   }
+    100% {
+      right: 150rem;
+
+    }
   }
   .blueberry2 {
     bottom: -75rem;
     right: 300rem;
     width: 92rem;
+    animation: slideIn6 1.5s ease-in-out,   float  6s infinite ease-in-out .8s;
+  }
+  @keyframes slideIn6 {
+    0% {
+      right:-100%;
+    }
+   87%{
+    right: 330rem;
+   }
+    100% {
+      right: 300rem;
+
+    }
   }
   .rasberry {
     bottom: -50rem;
     z-index: -1;
     right: 500rem;
     width: 108rem;
+    animation: slideIn7 1.5s ease-in-out,  float  6s infinite ease-in-out 1.2s;
+  }
+  @keyframes slideIn7 {
+    0% {
+      right:-100%;
+    }
+   87%{
+    right: 520rem;
+   }
+    100% {
+      right: 500rem;
+
+    }
   }
   .blackberry {
     bottom: 0rem;
     z-index: -1;
     right: 600rem;
     width: 239rem;
+    animation: slideIn8 1.5s ease-in-out,  float  6s infinite ease-in-out 1s;
+  }
+  @keyframes slideIn8 {
+    0% {
+      right:-100%;
+    }
+   87%{
+    right: 620rem;
+   }
+    100% {
+      right: 600rem;
+
+    }
   }
 }

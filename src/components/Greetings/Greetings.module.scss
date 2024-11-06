@@ -62,8 +62,20 @@
   bottom: 30rem;
   right: 120rem;
   width: 100rem;
+  animation: rotate 90s linear infinite forwards;
 }
-
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(360deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+ 
+}
 /* Текстовый блок */
 .text_content {
   width: 50%;
