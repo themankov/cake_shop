@@ -1,19 +1,20 @@
 import style from './DesertCard.module.scss';
 import cake3 from '../../images/cake3.png';
-const DesertCard = () => {
+const DesertCard = ({id,name,description,img}) => {
   return (
     <div className={style.dessert_item}>
       <div className={style.image_container}>
-        <img src={cake3} alt="Фисташка-Малина" />
+        <img src={img} alt={name} />
       </div>
-      <h3>Фисташка-Малина</h3>
-      <p>
-        -Фисташковый бисквит
-        <br />
-        -Фисташковый крем со свежей малиной
-        <br />
-        -Малиновое конфи
-      </p>
+      <h3>{name}</h3>
+      <ul>
+        {description.map((item,index)=>{
+        return(
+         <li key={id}>{item}</li>
+        )
+        })}
+
+      </ul>
     </div>
   );
 };
