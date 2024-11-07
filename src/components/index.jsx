@@ -9,6 +9,7 @@ import Button from './Button';
 import Goal from './Goal';
 import Testimonials from './Testimonials';
 import Contacts from './Contacts';
+import SkeletonCard from './Skeleton';
 export {
   Header,
   HeroSection,
@@ -21,4 +22,5 @@ export {
   Goal,
   Testimonials,
   Contacts,
+  SkeletonCard
 };

@@ -95,6 +95,5 @@ export async function prepareDisplayData(jsonFilePath) {
         };
     }));
 
-    console.log(displayData); // Готовый массив данных для отображения
     return displayData;
 }

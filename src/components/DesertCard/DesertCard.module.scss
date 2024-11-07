@@ -1,6 +1,7 @@
 .dessert_item {
   text-align: center;
   height: 340rem;
+  cursor: pointer;
 
   .image_container {
     width: 320rem;
@@ -22,7 +23,10 @@
     text-transform: uppercase;
     letter-spacing: 3rem;
   }
-  p {
+  ul{
+    list-style: none;
+  }
+   li {
     font-size: 13rem;
     color: rgba(116, 116, 116, 1);
     font-weight: bold;
