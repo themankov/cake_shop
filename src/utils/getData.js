@@ -41,8 +41,16 @@ export async function getFolderContents(folderPath) {
     }
 }
 
-export async function loadJsonFile(filePath) {
-    const url = `https://cloud-api.yandex.net/v1/disk/resources/download?path=${encodeURIComponent(filePath)}`;
+export async function loadJsonFile(filePath, page = "main") {
+    let limit = 8;
+    let currentOffset = 0;
+    let offset = 0; 
+
+    if (page === "menu") {
+        currentOffset = offset;
+    }
+
+    const url = `https://cloud-api.yandex.net/v1/disk/resources/download?path=${encodeURIComponent(filePath)}&limit=${limit}&offset=${currentOffset}`;
     
     const response = await fetch(url, {
         method: 'GET',
@@ -52,11 +60,16 @@ export async function loadJsonFile(filePath) {
     });
 
     if (response.ok) {
+        if (page === "menu") {
+            offset += 8; // Увеличиваем смещение для следующего запроса на странице меню
+        } else {
+            offset = 0; // Сбрасываем смещение для главной страницы
+        }
         const data = await response.json();
         const jsonUrl = data.href; // Получаем прямую ссылку на JSON-файл
         const jsonResponse = await fetch(jsonUrl);
         const jsonData = await jsonResponse.json();
-        console.log(jsonData); // Выводим JSON данные
+        
         return jsonData;
     } else {
         console.error('Ошибка при загрузке JSON:', response.statusText);
