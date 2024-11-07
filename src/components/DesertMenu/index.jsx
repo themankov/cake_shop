@@ -38,7 +38,7 @@ const DesertMenu = ({innerRef}) => {
       </div>
 
       <div className={style.menu_button_container}>
-        <Link to="#" className={style.menu_button}>
+        <Link to="/menu" className={style.menu_button}>
           Смотреть все меню
         </Link>
       </div>

@@ -3,6 +3,7 @@ import { Button } from '../../components';
 import style from './CardPage.module.scss'
 import { useParams } from 'react-router-dom';
 import { prepareDisplayData } from '../../utils/getData';
+import Skeleton from './Skeleton';
 export const CardPage=()=>{
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true); 
@@ -14,7 +15,7 @@ export const CardPage=()=>{
         } catch (error) {
             console.error("Ошибка загрузки данных:", error);
         } finally {
-            setIsLoading(false);
+            setIsLoading(false)
 
         }
     };
@@ -24,7 +25,7 @@ export const CardPage=()=>{
 
     const {id}=useParams();
     if (isLoading) {
-        return <div>Загрузка...</div>; // показать сообщение, пока данные загружаются
+        return <Skeleton/>; // показать сообщение, пока данные загружаются
     }
     const { name, imageUrl, description } = data.find(
             (item, index) => {

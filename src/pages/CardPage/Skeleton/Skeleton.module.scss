@@ -1,0 +1,68 @@
+.content {
+   
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    .cake_image{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .img{
+            width: 300rem;
+            height: 300rem;
+            background-color: #292424;
+            animation: skeleton-loading 1.2s infinite ease-in-out;
+        }
+    }
+    .cake_info {
+    padding-top: 195rem;
+     width: 50%;
+     .name {
+        width: 70%;
+        height: 57rem;
+        background-color: #ddd;
+        margin-bottom: 100rem;
+        animation: skeleton-loading 1.2s infinite ease-in-out;
+    }
+
+        .text {
+            margin-bottom: 10rem;
+            width: 85%;
+            background-color: #ddd;
+            animation: skeleton-loading 1.2s infinite ease-in-out;
+            height: 26rem;
+        }
+        
+
+    }
+}
+
+
+.buttons {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    gap: 115rem;
+
+}
+.button {
+    padding: 5rem 10rem;  
+    width: 405rem;
+    height: 55rem;
+    animation: skeleton-loading 1.2s infinite ease-in-out;
+
+  }
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: #e0e0e0;
+    }
+    50% {
+        background-color: #bdb8b8;
+    }
+    100% {
+        background-color: #e0e0e0;
+    }
+}
