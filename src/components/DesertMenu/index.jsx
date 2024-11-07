@@ -9,7 +9,7 @@ const DesertMenu = ({innerRef}) => {
   useEffect(() => {
     const fetchData = async () => {
         const fetchedData = await prepareDisplayData('/cakes.json');
-        setData(fetchedData); // Обновляем состояние данными
+        setData(fetchedData); 
     };
 
     fetchData();
@@ -21,10 +21,6 @@ const DesertMenu = ({innerRef}) => {
       <SectionTitle title={'Десерт Меню'} number={'02'}/>
 
       <div className={style.dessert_grid}>
-        
-        
-
-      
        {data.length > 0 ? data.map((item) => (
                      <DesertCard
                          key={item.id}

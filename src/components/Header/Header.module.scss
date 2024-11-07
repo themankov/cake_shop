@@ -6,8 +6,8 @@
   align-items: center;
   position: fixed;
 
-  background-color: rgba(255, 255, 255, 0.4); /* Полупрозрачный белый цвет */
-  backdrop-filter: blur(10px); /* Размытие фона */
+  background-color: transparent; /* Полупрозрачный белый цвет */
+  backdrop-filter: blur(20px); /* Размытие фона */
   -webkit-backdrop-filter: blur(10px); /* Поддержка Safari */
   z-index: 1000;
 

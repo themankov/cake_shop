@@ -1,2 +1,4 @@
 import HomePage from "./HomePage";
-export {HomePage}
+import AdminPage from "./AdminPage";
+import CardPage from "./CardPage";
+export {HomePage,CardPage,AdminPage}
