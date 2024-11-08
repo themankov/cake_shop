@@ -34,24 +34,18 @@ export async function getFolderContents(folderPath) {
 
     if (response.ok) {
         const data = await response.json();
-        console.log(data);
+        
         return data; // Возвращает информацию о папке и файлах в ней
     } else {
         console.error('Ошибка:', response.statusText);
     }
 }
 
-export async function loadJsonFile(filePath, page = "main") {
-    let limit = 8;
-    let currentOffset = 0;
-    let offset = 0; 
+export async function loadJsonFile(filePath) {
+   
 
-    if (page === "menu") {
-        currentOffset = offset;
-    }
-
-    const url = `https://cloud-api.yandex.net/v1/disk/resources/download?path=${encodeURIComponent(filePath)}&limit=${limit}&offset=${currentOffset}`;
-    
+    const url = `https://cloud-api.yandex.net/v1/disk/resources/download?path=${encodeURIComponent(filePath)}`;
+  
     const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -60,11 +54,7 @@ export async function loadJsonFile(filePath, page = "main") {
     });
 
     if (response.ok) {
-        if (page === "menu") {
-            offset += 8; // Увеличиваем смещение для следующего запроса на странице меню
-        } else {
-            offset = 0; // Сбрасываем смещение для главной страницы
-        }
+
         const data = await response.json();
         const jsonUrl = data.href; // Получаем прямую ссылку на JSON-файл
         const jsonResponse = await fetch(jsonUrl);
@@ -88,25 +78,38 @@ async function getImageUrl(filePath) {
 
     if (response.ok) {
         const data = await response.json();
-        return data.href; // Возвращаем прямую ссылку на изображение
+        return data.href; 
     } else {
         console.error('Ошибка при получении ссылки на изображение:', response.statusText);
     }
 }
 
-// Основная функция для подготовки данных к отображению
-export async function prepareDisplayData(jsonFilePath) {
+
+export async function prepareDisplayData(jsonFilePath,page='main', offset=0) {
+    let limit = 8;
+    let currentOffset = 0;
+
+    if (page === "menu") {
+        currentOffset = offset;
+    }
+    const endOffset = currentOffset + limit; 
     const jsonData = await loadJsonFile(jsonFilePath);
     
-    const displayData = await Promise.all(jsonData.map(async (item) => {
-        const imageUrl = await getImageUrl(item.imagePath); // Получаем прямую ссылку для каждого изображения
-        return {
-            id:item.id,
-            name: item.name,
-            description:item.description,
-            imageUrl: imageUrl
-        };
-    }));
+    const displayData = await Promise.all(
+        jsonData.map(async (item, index) => {
+            if (index >= currentOffset && index < endOffset) {
+                const imageUrl = await getImageUrl(item.imagePath); 
+                return {
+                    id: item.id,
+                    name: item.name,
+                    description: item.description,
+                    imageUrl: imageUrl,
+                };
+            }
+            return null; 
+        })
+    );
 
-    return displayData;
+    // Удаляем null значения из массива
+    return displayData.filter(item => item !== null);
 }

@@ -2,46 +2,74 @@ import { useEffect, useRef, useState } from 'react';
 import style from './MenuPage.module.scss'
 import { DesertCard, SkeletonCard } from '../../components';
 import { prepareDisplayData } from '../../utils/getData';
+
+const PAGE_SIZE = 8;
+
+
+
 const MenuPage=()=>{
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([]); // Все данные
     const [page, setPage] = useState(1); // Текущая страница
-    const [displayedData, setDisplayedData] = useState([]); // Подгруженные данные для отображения
-    const NewPageRef = useRef(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-        const fetchedData = await prepareDisplayData('/cakes.json');
-        setData(fetchedData); 
-        setDisplayedData(fetchedData.slice(0, 8));
+    const isMounted = useRef(false); // Флаг для проверки, был ли компонент смонтирован
+    const loadMoreRef = useRef(null); // Реф для отслеживания последнего элемента
+ // Флаг для проверки, есть ли еще данные для загрузки
+    const fetchData = async (page, offset) => {
+        const fetchedData = await prepareDisplayData('/cakes.json', page,offset);
+        console.log(fetchedData);
+        setData((prevData) => [...prevData, ...fetchedData]);
     };
-
-    fetchData();
+ 
+ // Загрузка начальных данных при монтировании компонента
+ useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchData('menu',0);
 }, []);
 
+
 useEffect(() => {
-    
-    // Подгружаем дополнительные данные при изменении страницы
-    const loadMoreData = () => {
-        const start = (page - 1) * 8;
-        const end = page * 8;
-        const nextPageData = data.slice(start, end);
-        debugger;
-        setDisplayedData((prevData) => [...prevData, ...nextPageData]);
+    const loadMoreData =async () => {
+        const offset = page * PAGE_SIZE;
+         await fetchData('menu',offset);
     };
 
-    loadMoreData();
-}, [page,data]);
+    if (page > 1) {
+        loadMoreData();
+    }
+}, [page]);
 
-const { ref, inView } = useInView({
-    threshold: 1,
-  });
+    // Настройка IntersectionObserver для отслеживания конца списка
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting && isMounted.current) {
+                    setPage((prevPage) => prevPage + 1); // Увеличиваем страницу для подгрузки новых данных
+                }
+            },
+            { threshold: 1 }
+        );
+
+        if (loadMoreRef.current) {
+            observer.observe(loadMoreRef.current);
+        }
+
+        return () => {
+            if (loadMoreRef.current) {
+                observer.unobserve(loadMoreRef.current);
+            }
+        };
+    }, []);
+
+    // Установка флага isMounted после первой загрузки
+    useEffect(() => {
+        isMounted.current = true;
+    }, []);
 
     return(
         <div className={style.content}>
             <h2 className={style.title}>Заказывайте вкусные тортики </h2>
             <input type={style.text} placeholder='Поиск'/>
             <div className={style.dessert_grid}>
-       {displayedData.length > 0 ? displayedData.map((item) => (
+       {data.length > 0 ? data.map((item) => (
                      <DesertCard
                          key={item.id}
                          id={item.id}
@@ -58,7 +86,7 @@ const { ref, inView } = useInView({
       </div>
 
             {/* Элемент для отслеживания конца списка */}
-            <div className="intersection-observer" ref={ref}></div>
+            <div className="intersection-observer" ref={loadMoreRef}></div>
         </div>
     )
 }
