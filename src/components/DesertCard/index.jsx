@@ -13,7 +13,7 @@ const DesertCard = ({id,name,description,img}) => {
       <ul>
         {description.map((item,index)=>{
         return(
-         <li key={id}>{item}</li>
+         <li key={id}>{`-${item}`}</li>
         )
         })}
 

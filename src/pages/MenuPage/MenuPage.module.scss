@@ -1,9 +1,37 @@
 /* Сетка десертов */
+.content{
+  .title{
+    padding-top: 87rem;
+    padding-left: 45rem;
+    font-size: 32rem;
+    font-family: 'Roboto flex';
+    font-weight: bold;
+    color:#D4A9BE
+  }
+  input{
+    margin-top: 12rem;
+    margin-left: 45rem;
+    width: 265rem;
+    padding: 6rem 10rem;
+    font-family: 'Roboto flex';
+    font-weight: bold;
+    color: #C7C7C7;
+    font-size: 15rem;
+    border: none;
+    border-radius: 6rem;
+    outline: none;
+    &::placeholder{
+      color: #C7C7C7;
+    }
+
+  }
+
+}
 .dessert_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320rem, 400px));
     padding: 0 50rem;
-    margin: 300rem auto;
+    margin: 40rem auto;
     gap: 20rem;
   }
   

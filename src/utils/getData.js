@@ -85,7 +85,7 @@ async function getImageUrl(filePath) {
 }
 
 
-export async function prepareDisplayData(jsonFilePath,page='main', offset=0) {
+export async function prepareDisplayData(jsonFilePath,page='main', offset=0,input='') {
     let limit = 8;
     let currentOffset = 0;
 
@@ -97,16 +97,31 @@ export async function prepareDisplayData(jsonFilePath,page='main', offset=0) {
     
     const displayData = await Promise.all(
         jsonData.map(async (item, index) => {
-            if (index >= currentOffset && index < endOffset) {
-                const imageUrl = await getImageUrl(item.imagePath); 
-                return {
-                    id: item.id,
-                    name: item.name,
-                    description: item.description,
-                    imageUrl: imageUrl,
-                };
+            if(input){
+                if (item.name.startsWith(input.trim())) {
+                    const imageUrl = await getImageUrl(item.imagePath); 
+                    return {
+                        id: item.id,
+                        name: item.name,
+                        description: item.description,
+                        imageUrl: imageUrl,
+                    };
+                }
+                return null; 
+            }else{
+                if (index >= currentOffset && index < endOffset) {
+                    const imageUrl = await getImageUrl(item.imagePath); 
+                    return {
+                        id: item.id,
+                        name: item.name,
+                        description: item.description,
+                        imageUrl: imageUrl,
+                    };
+                }
+                return null; 
             }
-            return null; 
+            
+            
         })
     );
 

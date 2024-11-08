@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import style from './MenuPage.module.scss'
 import { DesertCard, SkeletonCard } from '../../components';
 import { prepareDisplayData } from '../../utils/getData';
-
+import useDebounce from '../../hooks/useDebounce';
 const PAGE_SIZE = 8;
 
 
@@ -10,21 +10,32 @@ const PAGE_SIZE = 8;
 const MenuPage=()=>{
     const [data, setData] = useState([]); // Все данные
     const [page, setPage] = useState(1); // Текущая страница
+    const [inputValue, setInputValue] = useState(''); // Состояние для ввода текста
+
     const isMounted = useRef(false); // Флаг для проверки, был ли компонент смонтирован
     const loadMoreRef = useRef(null); // Реф для отслеживания последнего элемента
- // Флаг для проверки, есть ли еще данные для загрузки
-    const fetchData = async (page, offset) => {
-        const fetchedData = await prepareDisplayData('/cakes.json', page,offset);
-        console.log(fetchedData);
-        setData((prevData) => [...prevData, ...fetchedData]);
-    };
- 
- // Загрузка начальных данных при монтировании компонента
- useEffect(() => {
-    window.scrollTo(0, 0);
-    fetchData('menu',0);
-}, []);
 
+    const debouncedInputValue = useDebounce(inputValue, 1000);
+ // Флаг для проверки, есть ли еще данные для загрузки
+  // Основная функция для получения данных
+  const fetchData = async (page = 0, offset = 0, input = '') => {
+    const fetchedData = await prepareDisplayData('/cakes.json', page, offset, input);
+
+    // Условие для загрузки данных
+    if (input) {
+        setData(fetchedData); // Показываем только отфильтрованные данные
+    } else {
+        setData((prevData) => (page === 0 ? fetchedData : [...prevData, ...fetchedData]));
+    }
+};
+    
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value); // Обновляем значение inputValue при каждом изменении ввода
+    };
+
+useEffect(()=>{
+    window.scrollTo(0,0)
+},[])
 
 useEffect(() => {
     const loadMoreData =async () => {
@@ -36,6 +47,18 @@ useEffect(() => {
         loadMoreData();
     }
 }, [page]);
+
+ // Обновление данных при изменении debouncedInputValue
+ useEffect(() => {
+    if (debouncedInputValue) {
+        // Если есть текст в поле поиска, фильтруем данные
+        fetchData(0, 0, debouncedInputValue);
+    } else {
+        // Если текст отсутствует, загружаем данные по умолчанию
+        fetchData(0, 0); // Первая страница без фильтрации
+        setPage(1); // Сбрасываем страницу
+    }
+}, [debouncedInputValue]);
 
     // Настройка IntersectionObserver для отслеживания конца списка
     useEffect(() => {
@@ -67,9 +90,9 @@ useEffect(() => {
     return(
         <div className={style.content}>
             <h2 className={style.title}>Заказывайте вкусные тортики </h2>
-            <input type={style.text} placeholder='Поиск'/>
+            <input type='text' value={inputValue} onChange={handleInputChange} placeholder='Поиск'/>
             <div className={style.dessert_grid}>
-       {data.length > 0 ? data.map((item) => (
+       { data.length > 0 ? data.map((item) => (
                      <DesertCard
                          key={item.id}
                          id={item.id}
