@@ -1,4 +1,3 @@
-
 import style from './HeroSection.module.scss';
 import { Button } from './../index';
 import macaroon_red from '../../images/macaron_red.png';
@@ -9,9 +8,9 @@ import blueberry from '../../images/blueberry.png';
 import blueberry2 from '../../images/blueberry2.png';
 import rasberry from '../../images/rasberry.png';
 import blackberry from '../../images/blackberry.png';
-const HeroSection = ({innerRef}) => {
+const HeroSection = ({ innerRef }) => {
   return (
-    <div className={style.hero} ref={innerRef}>
+    <div className={`${style.hero} section`} ref={innerRef} id="Главная">
       <h2>Торты на заказ в Москве</h2>
       <h1 className={style.hero_title}>
         CAKES <br /> SMAKAEVA

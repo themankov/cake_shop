@@ -25,16 +25,24 @@
     ul {
       display: flex;
       list-style: none;
-      li {
-        cursor: pointer;
+      a {
+        li {
+          cursor: pointer;
           font-size: 14rem;
           padding-right: 25rem;
           font-family: 'Roboto flex';
           text-transform: uppercase;
           color: #000000;
+        }
+        li:hover {
+          color: rgba(161, 129, 144, 1);
+        }
       }
-      li:hover{
-        color: rgba(161, 129, 144, 1);
+
+      .activeLink {
+        li {
+          color: rgba(161, 129, 144, 1);
+        }
       }
     }
 

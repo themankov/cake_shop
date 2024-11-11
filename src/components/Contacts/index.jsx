@@ -3,12 +3,20 @@ import geo from './../../images/geo.svg';
 import whatsapp2 from './../../images/whatsapp2.svg';
 import phone from '../../images/phone.svg';
 import { SectionTitle } from '../index';
-const Contacts = ({innerRef}) => {
+const Contacts = ({ innerRef }) => {
   return (
-    <div classNameName={style.contact_section} ref={innerRef}>
+    <div
+      className={`${style.contact_section} section`}
+      ref={innerRef}
+      id="Контакты"
+    >
       <div className={style.contact_container}>
         <div className={style.contact_info}>
-          <SectionTitle number={'01'} title={'Связаться со мной'}brown={'True'}/>
+          <SectionTitle
+            number={'01'}
+            title={'Связаться со мной'}
+            brown={'True'}
+          />
           <p className={style.description}>
             Lorem ipsum dolor amet, consectetur adipiscing elit. Mauris arcu
             quisque montes nulla placerat feugiat. Senectus nibh tempor et

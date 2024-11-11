@@ -6,9 +6,13 @@ import pancakes from '../../images/pancakes.png';
 import donut from '../../images/donut.png';
 import flower from '../../images/flower.png';
 
-const Greetings = ({innerRef}) => {
+const Greetings = ({ innerRef }) => {
   return (
-    <div className={style.about_section} ref={innerRef}>
+    <div
+      className={`${style.about_section} section`}
+      ref={innerRef}
+      id="Обо мне"
+    >
       <div className={style.content_wrapper}>
         <div className={style.photo_gallery}>
           <img
@@ -33,7 +37,7 @@ const Greetings = ({innerRef}) => {
         </div>
 
         <div className={style.text_content}>
-          <SectionTitle number={'01'} title={'Познакомимся'}/>
+          <SectionTitle number={'01'} title={'Познакомимся'} />
           <p className={style.subheading}>Меня зовут Анна и Я Кондитер</p>
           <p className={style.description}>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Mauris arcu
