@@ -85,16 +85,15 @@ async function getImageUrl(filePath) {
 }
 
 
-export async function prepareDisplayData(jsonFilePath,page='main', offset=0,input='') {
+export async function prepareDisplayData(jsonFilePath,page='main', offset=0,input='',id=0) {
     let limit = 8;
     let currentOffset = 0;
-
     if (page === "menu") {
         currentOffset = offset;
     }
+
     const endOffset = currentOffset + limit; 
     const jsonData = await loadJsonFile(jsonFilePath);
-    
     const displayData = await Promise.all(
         jsonData.map(async (item, index) => {
             if(input){
@@ -108,6 +107,19 @@ export async function prepareDisplayData(jsonFilePath,page='main', offset=0,inpu
                     };
                 }
                 return null; 
+            }else if(page==='card'){
+                console.log(item.id);
+                if(String(item.id)===id){
+                    const imageUrl = await getImageUrl(item.imagePath); 
+                return {
+                    id: item.id,
+                    name: item.name,
+                    description: item.description,
+                    imageUrl: imageUrl,
+                };
+            }
+            return null; 
+
             }else{
                 if (index >= currentOffset && index < endOffset) {
                     const imageUrl = await getImageUrl(item.imagePath); 
@@ -125,6 +137,7 @@ export async function prepareDisplayData(jsonFilePath,page='main', offset=0,inpu
         })
     );
 
-    // Удаляем null значения из массива
-    return displayData.filter(item => item !== null);
+    const filteredData = displayData.filter(item => item !== null);
+    console.log('Filtered displayData:', filteredData);
+    return filteredData;
 }

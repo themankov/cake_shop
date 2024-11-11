@@ -5,16 +5,17 @@ import { useParams } from 'react-router-dom';
 import { prepareDisplayData } from '../../utils/getData';
 import Skeleton from './Skeleton';
 export const CardPage=()=>{
+    const {id}=useParams();
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true); 
     useEffect(() => {
     const fetchData = async () => {
         try {
-            const fetchedData = await prepareDisplayData('/cakes.json');
+            const fetchedData = await prepareDisplayData('/cakes.json','card',0,'',String(id));
             setData(fetchedData);
-        } catch (error) {
-            console.error("Ошибка загрузки данных:", error);
-        } finally {
+           
+        } 
+         finally {
             setIsLoading(false)
 
         }
@@ -23,18 +24,12 @@ export const CardPage=()=>{
     fetchData();
 }, []);
 
-    const {id}=useParams();
+    
     if (isLoading) {
         return <Skeleton/>; // показать сообщение, пока данные загружаются
     }
-    const { name, imageUrl, description } = data.find(
-            (item, index) => {
-              return String(item.id) === String(id);
-            }
-          );
-
-
     
+    const { name, imageUrl, description } = data[0]
     
 return(
     <>

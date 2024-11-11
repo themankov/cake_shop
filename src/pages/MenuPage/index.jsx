@@ -26,6 +26,7 @@ const MenuPage=()=>{
         setData(fetchedData); // Показываем только отфильтрованные данные
     } else {
         setData((prevData) => (page === 0 ? fetchedData : [...prevData, ...fetchedData]));
+  
     }
 };
     
