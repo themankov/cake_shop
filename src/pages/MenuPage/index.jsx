@@ -24,7 +24,7 @@ const MenuPage = () => {
       offset,
       input
     );
-
+    
     // Условие для загрузки данных
     if (input) {
       setData(fetchedData); // Показываем только отфильтрованные данные
@@ -32,6 +32,9 @@ const MenuPage = () => {
       setData((prevData) =>
         page === 0 ? fetchedData : [...prevData, ...fetchedData]
       );
+      if(page===0){
+        localStorage.setItem('items',JSON.stringify(data))
+      }
     }
   };
 
@@ -62,7 +65,12 @@ const MenuPage = () => {
       fetchData(0, 0, debouncedInputValue);
     } else {
       // Если текст отсутствует, загружаем данные по умолчанию
-      fetchData(0, 0); // Первая страница без фильтрации
+      const cachedData = JSON.parse(localStorage.getItem('items'));
+      if(cachedData){
+        setData(cachedData);
+      }else{
+        fetchData(0, 0); // Первая страница без фильтрации
+      }
       setPage(1); // Сбрасываем страницу
     }
   }, [debouncedInputValue]);

@@ -10,9 +10,15 @@ const DesertMenu = ({ innerRef }) => {
     const fetchData = async () => {
       const fetchedData = await prepareDisplayData('/cakes.json');
       setData(fetchedData);
+      localStorage.setItem('items', JSON.stringify(fetchedData));
     };
-
-    fetchData();
+    const cachedData = JSON.parse(localStorage.getItem('items'));
+    if (cachedData){
+      setData(cachedData)
+    }else{
+      fetchData();
+    }
+  
   }, []);
 
   return (
