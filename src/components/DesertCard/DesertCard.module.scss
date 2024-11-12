@@ -2,17 +2,21 @@
   text-align: center;
   height: 340rem;
   cursor: pointer;
+  overflow: hidden;
 
   .image_container {
+    margin: 0 auto;
     width: 320rem;
     height: 207rem;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    overflow: hidden;
+  
     img {
-      padding: 0 74rem;
-      width: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: cover; 
     }
   }
   h3 {
@@ -25,6 +29,13 @@
   }
   ul{
     list-style: none;
+
+    p{
+      font-size: 15rem;
+    color: #000;
+    font-weight: bold;
+    font-family: 'Roboto flex';
+    }
   }
    li {
     font-size: 13rem;

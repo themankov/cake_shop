@@ -10,7 +10,12 @@ const DesertCard = ({ id, name, description, img }) => {
         <h3>{name}</h3>
         <ul>
           {description.map((item, index) => {
-            return <li key={id}>{`-${item}`}</li>;
+            if  (index===3){
+              return <p>Подробнее...</p>
+            }else if(index<3){
+              return <li key={id}>{`-${item}`}</li>;
+            }
+            
           })}
         </ul>
       </div>

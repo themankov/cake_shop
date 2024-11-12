@@ -6,6 +6,7 @@ const Header = ({ data, setSelectedLink, innerRef }) => {
   const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
   const [showBar, setShowBar] = useState(false);
+  const [isActive,setIsActive]=useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +43,7 @@ const Header = ({ data, setSelectedLink, innerRef }) => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      
     };
   }, []);
 
@@ -83,9 +85,14 @@ const Header = ({ data, setSelectedLink, innerRef }) => {
       <div className={style.header_logo}>
         <h1>Cakes Smakaeva</h1>
       </div>
-      <nav className={style.header_nav}>
+      <div className={`${style.hamburger} ${isActive?style.active:''}`} onClick={()=>setIsActive((state)=>!state)}>
+        <div className={style.line}></div>
+        <div className={style.line}></div>
+        <div className={style.line}></div>
+      </div>
+      <div className={`${style.header_nav} ${isActive?style.active:''}`}>
         <ul>{dataLi}</ul>
-      </nav>
+      </div>
     </header>
   );
 };
