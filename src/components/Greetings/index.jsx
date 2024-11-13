@@ -37,7 +37,8 @@ const Greetings = ({ innerRef }) => {
         </div>
 
         <div className={style.text_content}>
-          <SectionTitle number={'01'} title={'Познакомимся'} />
+          <div className={style.title}><SectionTitle number={'01'} title={'Познакомимся'} /></div>
+          
           <p className={style.subheading}>Меня зовут Анна и Я Кондитер</p>
           <p className={style.description}>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Mauris arcu

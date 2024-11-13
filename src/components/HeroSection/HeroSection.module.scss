@@ -29,7 +29,21 @@
     color: rgba(102, 76, 88, 1);
     margin-bottom: 30rem;
   }
-
+  @media (max-width: 600px) {
+    &_title {
+      font-size: 90rem;
+    }
+  }
+  @media (max-width: 400px) {
+    &_title {
+      font-size: 80rem;
+    }
+  }
+  @media (max-width: 320px) {
+    &_title {
+      font-size: 70rem;
+    }
+  }
   &_subtitle {
     font-size: 43rem;
     color: rgba(61, 46, 53, 1);
@@ -39,10 +53,11 @@
     font-weight: 500;
     margin-bottom: 30rem;
   }
-  @media (max-width: 680px) {
+  @media (max-width: 600px) {
     &_subtitle {
       font-size: 24rem;
       width: 400rem;
+      font-weight: 600;
       margin: 0 auto;
       margin-bottom: 90rem;
     }
@@ -52,12 +67,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 925rem;
+    width: 100%;
   }
-  @media (max-width: 680px) {
+  @media (max-width: 600px) {
     &_buttons {
       display: flex;
       flex-direction: column;
+  
       gap: 32rem;
     }
   }
@@ -85,14 +101,33 @@
       left: -30rem;
     }
   }
+  @media (max-width:800px){
+    .macaron_red {
+      scale: .7;
+    }
+    @keyframes slideIn3 {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: -40rem;
+      }
+      100% {
+        left: -60rem;
+      }
+    }
+  }
+ 
   .macaron_white {
     top: 210rem;
     left: 0;
     width: 283rem;
+    z-index: -1;
     transition: transform 2s ease-in-out;
     animation: slideIn2 1.7s forwards ease-in-out,
-      float 6s infinite ease-in-out 0.5s;
+    float 6s infinite ease-in-out 0.5s;
   }
+  
   @keyframes slideIn2 {
     0% {
       left: -100%;
@@ -104,10 +139,72 @@
       left: 150rem;
     }
   }
+  @media (max-width:1100px){
+    @keyframes slideIn2 {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: 100rem;
+      }
+      100% {
+        left: 80rem;
+      }
+    }
+  }
+  @media (max-width:750px){
+    .macaron_white {
+      scale: .8;
+    }
+    @keyframes slideIn2 {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: 60rem;
+      }
+      100% {
+        left: 40rem;
+      }
+    }
+  }
+  @media (max-width:425px){
+    .macaron_white {
+      top: 290rem;
+    }
+    @keyframes slideIn2 {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: 20rem;
+      }
+      100% {
+        left: 0rem;
+      }
+    }
+  }
+  @media (max-width:350px){
+    .macaron_white {
+      top: 270rem;
+    }
+    @keyframes slideIn2 {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: -30rem;
+      }
+      100% {
+        left: -50rem;
+      }
+    }
+  }
   .macaron_rose {
     bottom: -70rem;
     width: 413rem;
     left: 0;
+    z-index: -1;
     animation: slideIn 1.5s ease-out forwards,
       float 6s infinite ease-in-out 0.7s;
   }
@@ -128,6 +225,107 @@
       left: 92rem;
     }
   }
+  @media (max-width:1500px){
+    @keyframes slideIn {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: 18rem;
+      }
+      to {
+        left: 0rem;
+      }
+    }
+  }
+  @media (max-width:1200px){
+    @keyframes slideIn {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: -42rem;
+      }
+      to {
+        left: -50rem;
+      }
+    }
+  }
+  @media (max-width:1100px){
+    .macaron_rose {
+      bottom: 10rem;
+      scale: .8;
+    }
+    @keyframes slideIn {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: -42rem;
+      }
+      to {
+        left: -50rem;
+      }
+    }
+  }
+  @media (max-width:1100px){
+    .macaron_rose {
+      scale: .75;
+    }
+    @keyframes slideIn {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: -102rem;
+      }
+      to {
+        left: 120rem;
+      }
+    }
+  }
+  @media (max-width:600px){
+    .macaron_rose {
+      bottom: 80rem;
+    }
+    @keyframes slideIn {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: 68rem;
+      }
+      to {
+        left: 50rem;
+      }
+    }
+  }
+  @media (max-width:500px){
+    @keyframes slideIn {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: -32rem;
+      }
+      to {
+        left: -50rem;
+      }
+    }
+  }
+  @media (max-width:420px){
+    @keyframes slideIn {
+      0% {
+        left: -100%;
+      }
+      87% {
+        left: -92rem;
+      }
+      to {
+        left: -110rem;
+      }
+    }
+  }
   @keyframes float {
     0%,
     100% {
@@ -144,7 +342,60 @@
     width: 500rem;
     animation: slideIn4 1.5s ease-in-out;
   }
+  @media(max-width:1100px){
+    .cake {
+      width: 450rem;
+      bottom: 50rem;
+    }
+  }
+  @media(max-width:900px){
+    .cake {
+      width: 400rem;
+      bottom: 100rem;
+    }
+  }
+  @media(max-width:750px){
+    .cake {
 
+      bottom: 100rem;
+    }
+  }
+  @media(max-width:600px){
+    .cake {
+      width: 300rem;
+      bottom: 300rem;
+    }
+  }
+  @media(max-width:450px){
+    .cake {
+      width: 250rem;
+ 
+    }
+  }
+  @media(max-width:450px){
+    .cake {
+      width: 250rem;
+ 
+    }
+  }
+  @media(max-width:350px){
+    .cake {
+      width: 220rem;
+      bottom: 390rem;
+    }
+  }
+  @media(max-width:300px){
+    .cake {
+      width: 180rem;
+      bottom: 410rem;
+    }
+  }
+  @media(max-width:260px){
+    .cake {
+      width: 150rem;
+      bottom: 430rem;
+    }
+  }
   @keyframes slideIn4 {
     0% {
       right: -100%;
@@ -160,13 +411,7 @@
     width: 123rem;
     animation: slideIn5 1.5s ease-in-out, float 6s infinite ease-in-out 1.5s;
   }
-  @media (max-width: 680px) {
-    .blueberry {
-      bottom: 10rem;
-      right: 450rem;
-      scale: 0.8;
-    }
-  }
+ 
   @keyframes slideIn5 {
     0% {
       right: -100%;
@@ -178,17 +423,145 @@
       right: 150rem;
     }
   }
+  @media (max-width: 1100px) {
+    .blueberry {
+      right: 100rem;
+    }
+      @keyframes slideIn5 {
+        0% {
+          right: -100%;
+        }
+        87% {
+          right: 120rem;
+        }
+        100% {
+          right: 100rem;
+        }
+      }
+    
+  }
+  @media (max-width: 950px) {
+    .blueberry {
+      right: 50rem;
+    }
+      @keyframes slideIn5 {
+        0% {
+          right: -100%;
+        }
+        87% {
+          right: 70rem;
+        }
+        100% {
+          right: 50rem;
+        }
+      }
+    
+  }
+  @media (max-width: 800px) {
+    .blueberry {
+      scale: .8;
+      right: 0rem;
+    }
+      @keyframes slideIn5 {
+        0% {
+          right: -100%;
+        }
+        87% {
+          right: 20rem;
+        }
+        100% {
+          right: 0rem;
+        }
+      }
+  }
+  @media (max-width: 700px) {
+    .blueberry {
+      right: -30rem;
+    }
+      @keyframes slideIn5 {
+        0% {
+          right: -100%;
+        }
+        87% {
+          right: -10rem;
+        }
+        100% {
+          right: -30rem;
+        }
+      }
+  }
+  @media (max-width: 600px) {
+    .blueberry {
+      bottom: 10rem;
+      right: 170rem;
+    }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 190rem;
+      }
+      100% {
+        right: 170rem;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    .blueberry {
+      right: 100rem;
+    }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 120rem;
+      }
+      100% {
+        right: 100rem;
+      }
+    }
+  }
+  @media (max-width: 440px) {
+    .blueberry {
+      right: 30rem;
+    }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 50rem;
+      }
+      100% {
+        right: 30rem;
+      }
+    }
+  }
+  @media (max-width: 340px) {
+    .blueberry {
+      right: 0rem;
+    }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 20rem;
+      }
+      100% {
+        right: 0rem;
+      }
+    }
+  }
   .blueberry2 {
     bottom: -75rem;
     right: 300rem;
     width: 92rem;
     animation: slideIn6 1.5s ease-in-out, float 6s infinite ease-in-out 0.8s;
   }
-  @media (max-width: 680px) {
-    .blueberry2 {
-      right: 600rem;
-    }
-  }
+  
   @keyframes slideIn6 {
     0% {
       right: -100%;
@@ -200,6 +573,86 @@
       right: 300rem;
     }
   }
+  @media (max-width: 1100px) {
+    .blueberry2 {
+      right: 200rem;
+    }
+    @keyframes slideIn6 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 230rem;
+      }
+      100% {
+        right: 200rem;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .blueberry2 {
+      right: 100rem;
+    }
+    @keyframes slideIn6 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 130rem;
+      }
+      100% {
+        right: 100rem;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .blueberry2 {
+      right: 300rem;
+    }
+    @keyframes slideIn6 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 320rem;
+      }
+      100% {
+        right: 300rem;
+      }
+    }
+  }
+  @media (max-width: 440px) {
+    .blueberry2 {
+      right: 250rem;
+    }
+    @keyframes slideIn6 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 270rem;
+      }
+      100% {
+        right: 250rem;
+      }
+    }
+  }
+  @media (max-width: 340px) {
+    .blueberry2 {
+      right: 150rem;
+    }
+    @keyframes slideIn6 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 170rem;
+      }
+      100% {
+        right: 150rem;
+      }
+    }
+  }
   .rasberry {
     bottom: -50rem;
     z-index: -1;
@@ -207,12 +660,8 @@
     width: 108rem;
     animation: slideIn7 1.5s ease-in-out, float 6s infinite ease-in-out 1.2s;
   }
-  @media (max-width: 680px) {
-    .rasberry {
-      right: 750rem;
-      scale: 0.8;
-    }
-  }
+  
+
   @keyframes slideIn7 {
     0% {
       right: -100%;
@@ -224,6 +673,89 @@
       right: 500rem;
     }
   }
+  @media (max-width: 1100px) {
+    .rasberry {
+      right: 400rem;
+    }
+    @keyframes slideIn7 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 420rem;
+      }
+      100% {
+        right: 400rem;
+      }
+    }
+  }
+  @media (max-width: 850px) {
+    .rasberry {
+      right: 300rem;
+    }
+    @keyframes slideIn7 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 320rem;
+      }
+      100% {
+        right: 300rem;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .rasberry {
+      scale: 0.8;
+      right: 500rem;
+    }
+    @keyframes slideIn7 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 520rem;
+      }
+      100% {
+        right: 500rem;
+      }
+    }
+  }
+  @media (max-width: 450px) {
+    .rasberry {
+      scale: 0.8;
+      right: 400rem;
+    }
+    @keyframes slideIn7 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 420rem;
+      }
+      100% {
+        right: 400rem;
+      }
+    }
+  }
+  @media (max-width: 340px) {
+    .rasberry {
+      scale: 0.8;
+      right: 300rem;
+    }
+    @keyframes slideIn7 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 320rem;
+      }
+      100% {
+        right: 300rem;
+      }
+    }
+  }
   .blackberry {
     bottom: 0rem;
     z-index: -1;
@@ -231,13 +763,7 @@
     width: 239rem;
     animation: slideIn8 1.5s ease-in-out, float 6s infinite ease-in-out 1s;
   }
-  @media (max-width: 680px) {
-    .blackberry {
-      bottom: 90rem;
-      right: 550rem;
-      scale: 0.8;
-    }
-  }
+  
   @keyframes slideIn8 {
     0% {
       right: -100%;
@@ -247,6 +773,93 @@
     }
     100% {
       right: 600rem;
+    }
+  }
+  @media (max-width: 1300px) {
+    .blackberry {
+      right: 450rem;
+    }
+    @keyframes slideIn8 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 470rem;
+      }
+      100% {
+        right: 450rem;
+      }
+    }
+  }
+  @media (max-width: 950px) {
+    .blackberry {
+      right: 400rem;
+    }
+    @keyframes slideIn8 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 420rem;
+      }
+      100% {
+        right: 400rem;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .blackberry {
+      scale: 0.9;
+      right: 350rem;
+    }
+    @keyframes slideIn8 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 370rem;
+      }
+      100% {
+        right: 350rem;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .blackberry {
+      right: 300rem;
+    }
+    @keyframes slideIn8 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 320rem;
+      }
+      100% {
+        right: 300rem;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .blackberry {
+      bottom: 100rem;
+    }
+    
+  }
+  @media (max-width: 350px) {
+    .blackberry {
+      right: 200rem;
+    }
+    @keyframes slideIn8 {
+      0% {
+        right: -100%;
+      }
+      87% {
+        right: 220rem;
+      }
+      100% {
+        right: 200rem;
+      }
     }
   }
 }
