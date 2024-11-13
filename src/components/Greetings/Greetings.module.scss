@@ -7,7 +7,7 @@
 .content_wrapper {
   display: flex;
 }
-@media (max-width:600px){
+@media (max-width:800px){
   .content_wrapper {
     flex-direction: column;
   }
@@ -21,9 +21,11 @@
   flex-direction: column;
   align-items: center;
 }
-@media (max-width:600px){
+@media (max-width:800px){
   .photo_gallery {
     width: 100%;
+    top: 250rem;
+    justify-content: center;
     position: absolute;
     flex-direction: row;
   }
@@ -47,17 +49,40 @@
   transform: rotate(-10deg);
   box-shadow: -1px -1px 20px rgb(105, 104, 104);
 }
+@media (max-width:800px){
+  .card_1 {
+    box-shadow: none;
+    left: 0;
+    top: 0rem;
+  }
+}
 .card_2 {
   transform: rotate(20deg);
   left: 140rem;
   top: -30rem;
   box-shadow: -2px -2px 10px rgb(105, 104, 104);
 }
+@media (max-width:800px){
+  .card_2 {
+
+    left: 0rem;
+    top: 0rem;
+ 
+  }
+}
 .card_3 {
   transform: rotate(-20deg);
   top: -90rem;
   z-index: -1;
   box-shadow: -1px -1px 20px rgb(105, 104, 104);
+}
+@media (max-width:800px){
+  .card_3 {
+   left: 0rem;
+    top: 0rem;
+    z-index: 1;
+    box-shadow: -1px -1px 10px rgb(105, 104, 104);
+  }
 }
 /* Декоративные изображения */
 .decor {
@@ -89,6 +114,24 @@
     left: -50rem;
   }
 }
+@media (max-width:800px){
+  .flower {
+  top: 55vh;
+  left: 40%;
+  transform: rotate(310deg);
+
+  }
+}
+@media (max-width:340px){
+  .flower {
+    top: 60vh;
+    }
+}
+@media (max-width:250px){
+  .flower {
+    top: 65vh;
+    }
+}
 .cookie {
   bottom: 30rem;
   right: 120rem;
@@ -100,11 +143,11 @@
     right: 10rem;
   }
 }
-@media (max-width:600px){
+@media (max-width:800px){
   .cookie {
     scale: .8;
-    top: 150rem;
-    right: 0rem;
+    bottom: 220rem;
+   
   }
 }
 @keyframes rotate {
@@ -125,7 +168,7 @@
   padding-top: 43rem;
 
   
-  @media (max-width:600px){
+  @media (max-width:800px){
     .title{
       display: flex;
       padding-right: 300rem;
@@ -140,7 +183,7 @@
     text-align: left;
     font-weight: bold;
   }
-  @media (max-width:600px){
+  @media (max-width:800px){
     .subheading {
     display: flex;
     justify-content: flex-end;
@@ -157,7 +200,21 @@
     color: #747474;
     line-height: 1.6;
   }
-  @media (max-width:600px){
+  @media (max-width:900px){
+    .description {
+      font-size: 20rem;
+    }
+  }
+  @media (max-width:800px){
+    .description {
+      margin-top: 320rem;
+      font-size: 25rem;
+      width: 100%;
+      
+    }
+  }
+  
+  @media (max-width:800px){
     .cookie {
       scale: .8;
       top: 150rem;
@@ -165,7 +222,7 @@
     }
   }
 }
-@media (max-width:600px){
+@media (max-width:800px){
   .text_content {
     width: 100%;
   }

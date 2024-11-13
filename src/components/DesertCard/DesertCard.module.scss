@@ -44,4 +44,8 @@
     font-family: 'Roboto flex';
     white-space: pre-line;
   }
+  @media (max-width:800px){
+    font-size: 15rem;
+  }
+  
 }

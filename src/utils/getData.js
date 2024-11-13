@@ -101,7 +101,7 @@ export async function prepareDisplayData(
   if (page === 'menu') {
     currentOffset = offset;
   }
-
+  debugger;
   const endOffset = currentOffset + limit;
   const jsonData = await loadJsonFile(jsonFilePath);
   const displayData = await Promise.all(
@@ -118,7 +118,6 @@ export async function prepareDisplayData(
         }
         return null;
       } else if (page === 'card') {
-        console.log(item.id);
         if (String(item.id) === id) {
           const imageUrl = await getImageUrl(item.imagePath);
           return {

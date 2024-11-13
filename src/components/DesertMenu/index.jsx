@@ -12,13 +12,7 @@ const DesertMenu = ({ innerRef }) => {
       setData(fetchedData);
       localStorage.setItem('items', JSON.stringify(fetchedData));
     };
-    const cachedData = JSON.parse(localStorage.getItem('items'));
-    if (cachedData){
-      setData(cachedData)
-    }else{
       fetchData();
-    }
-  
   }, []);
 
   return (
