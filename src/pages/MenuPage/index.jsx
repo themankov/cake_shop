@@ -24,7 +24,7 @@ const MenuPage = () => {
       offset,
       input
     );
-    
+
     // Условие для загрузки данных
     if (input) {
       setData(fetchedData); // Показываем только отфильтрованные данные
@@ -32,8 +32,8 @@ const MenuPage = () => {
       setData((prevData) =>
         page === 0 ? fetchedData : [...prevData, ...fetchedData]
       );
-      if(page===0){
-        localStorage.setItem('items',JSON.stringify(data))
+      if (page === 0) {
+        localStorage.setItem('items', JSON.stringify(data));
       }
     }
   };
@@ -48,6 +48,7 @@ const MenuPage = () => {
 
   useEffect(() => {
     const loadMoreData = async () => {
+      debugger;
       const offset = page * PAGE_SIZE;
       await fetchData('menu', offset);
     };
@@ -66,9 +67,9 @@ const MenuPage = () => {
     } else {
       // Если текст отсутствует, загружаем данные по умолчанию
       const cachedData = JSON.parse(localStorage.getItem('items'));
-      if(cachedData){
+      if (cachedData) {
         setData(cachedData);
-      }else{
+      } else {
         fetchData(0, 0); // Первая страница без фильтрации
       }
       setPage(1); // Сбрасываем страницу

@@ -29,6 +29,7 @@
     color: rgba(102, 76, 88, 1);
     margin-bottom: 30rem;
   }
+
   &_subtitle {
     font-size: 43rem;
     color: rgba(61, 46, 53, 1);
@@ -38,12 +39,27 @@
     font-weight: 500;
     margin-bottom: 30rem;
   }
+  @media (max-width: 680px) {
+    &_subtitle {
+      font-size: 24rem;
+      width: 400rem;
+      margin: 0 auto;
+      margin-bottom: 90rem;
+    }
+  }
   &_buttons {
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 925rem;
+  }
+  @media (max-width: 680px) {
+    &_buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 32rem;
+    }
   }
 
   .decor {
@@ -53,18 +69,19 @@
     width: 260rem;
     transform: scale(0.8);
     top: -25rem;
-    left:0;
+    left: 0;
     transition: transform 2s ease-in-out;
-    animation: slideIn3 1.5s forwards ease-in-out, float  6s infinite ease-in-out 1s;
+    animation: slideIn3 1.5s forwards ease-in-out,
+      float 6s infinite ease-in-out 1s;
   }
   @keyframes slideIn3 {
-    0%{
+    0% {
       left: -100%;
     }
-    87%{
+    87% {
       left: -10rem;
     }
-    100%{
+    100% {
       left: -30rem;
     }
   }
@@ -73,43 +90,51 @@
     left: 0;
     width: 283rem;
     transition: transform 2s ease-in-out;
-    animation: slideIn2 1.7s forwards ease-in-out, float  6s infinite ease-in-out .5s;
+    animation: slideIn2 1.7s forwards ease-in-out,
+      float 6s infinite ease-in-out 0.5s;
   }
   @keyframes slideIn2 {
     0% {
-      left:-100%;
+      left: -100%;
     }
-    87%{
+    87% {
       left: 170rem;
     }
     100% {
-      left:150rem
-
+      left: 150rem;
     }
   }
   .macaron_rose {
     bottom: -70rem;
     width: 413rem;
-    left:0;
-    animation: slideIn 1.5s ease-out forwards,float  6s infinite ease-in-out .7s;
+    left: 0;
+    animation: slideIn 1.5s ease-out forwards,
+      float 6s infinite ease-in-out 0.7s;
   }
+  @media (max-width: 1000px) {
+    .macaron_rose {
+      bottom: 20rem;
+    }
+  }
+
   @keyframes slideIn {
-    0%{
+    0% {
       left: -100%;
     }
-    87%{
+    87% {
       left: 110rem;
     }
-    to{
+    to {
       left: 92rem;
     }
   }
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: rotate(2deg) scale(1);
     }
     50% {
-      transform:  rotate(-2deg) scale(1.02); /* Подъем вверх и небольшое увеличение */
+      transform: rotate(-2deg) scale(1.02); /* Подъем вверх и небольшое увеличение */
     }
   }
   .cake {
@@ -119,50 +144,60 @@
     width: 500rem;
     animation: slideIn4 1.5s ease-in-out;
   }
+
   @keyframes slideIn4 {
     0% {
-      right:-100%;
+      right: -100%;
     }
-   
+
     100% {
       right: 0;
-
     }
   }
   .blueberry {
     bottom: -40rem;
     right: 150rem;
     width: 123rem;
-    animation: slideIn5 1.5s ease-in-out,  float  6s infinite ease-in-out 1.5s;
+    animation: slideIn5 1.5s ease-in-out, float 6s infinite ease-in-out 1.5s;
+  }
+  @media (max-width: 680px) {
+    .blueberry {
+      bottom: 10rem;
+      right: 450rem;
+      scale: 0.8;
+    }
   }
   @keyframes slideIn5 {
     0% {
-      right:-100%;
+      right: -100%;
     }
-   87%{
-    right: 170rem;
-   }
+    87% {
+      right: 170rem;
+    }
     100% {
       right: 150rem;
-
     }
   }
   .blueberry2 {
     bottom: -75rem;
     right: 300rem;
     width: 92rem;
-    animation: slideIn6 1.5s ease-in-out,   float  6s infinite ease-in-out .8s;
+    animation: slideIn6 1.5s ease-in-out, float 6s infinite ease-in-out 0.8s;
+  }
+  @media (max-width: 680px) {
+    .blueberry2 {
+      right: 600rem;
+    }
   }
   @keyframes slideIn6 {
     0% {
-      right:-100%;
+      right: -100%;
     }
-   87%{
-    right: 330rem;
-   }
+    87% {
+      right: 330rem;
+    }
     100% {
       right: 300rem;
-
     }
   }
   .rasberry {
@@ -170,18 +205,23 @@
     z-index: -1;
     right: 500rem;
     width: 108rem;
-    animation: slideIn7 1.5s ease-in-out,  float  6s infinite ease-in-out 1.2s;
+    animation: slideIn7 1.5s ease-in-out, float 6s infinite ease-in-out 1.2s;
+  }
+  @media (max-width: 680px) {
+    .rasberry {
+      right: 750rem;
+      scale: 0.8;
+    }
   }
   @keyframes slideIn7 {
     0% {
-      right:-100%;
+      right: -100%;
     }
-   87%{
-    right: 520rem;
-   }
+    87% {
+      right: 520rem;
+    }
     100% {
       right: 500rem;
-
     }
   }
   .blackberry {
@@ -189,18 +229,24 @@
     z-index: -1;
     right: 600rem;
     width: 239rem;
-    animation: slideIn8 1.5s ease-in-out,  float  6s infinite ease-in-out 1s;
+    animation: slideIn8 1.5s ease-in-out, float 6s infinite ease-in-out 1s;
+  }
+  @media (max-width: 680px) {
+    .blackberry {
+      bottom: 90rem;
+      right: 550rem;
+      scale: 0.8;
+    }
   }
   @keyframes slideIn8 {
     0% {
-      right:-100%;
+      right: -100%;
     }
-   87%{
-    right: 620rem;
-   }
+    87% {
+      right: 620rem;
+    }
     100% {
       right: 600rem;
-
     }
   }
 }
