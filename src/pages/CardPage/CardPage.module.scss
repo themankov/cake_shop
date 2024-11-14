@@ -62,7 +62,9 @@
         }
         @media (max-width:600px){
             .cake_image{
-                top: -60rem;
+                position: absolute;
+                top: 5%;
+                left: 25%;
             }
         }
         .cake_info {
