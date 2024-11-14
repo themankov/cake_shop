@@ -1,3 +1,7 @@
+.dessert_menu {
+  padding-top: 100rem;
+}
+
 /* Сетка десертов */
 .dessert_grid {
   display: grid;
@@ -20,6 +24,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 400px) {
+  .menu_button_container {
+    width: 27%;
+  }
+}
+
 .menu_button {
   font-family: 'Roboto slab';
   text-transform: uppercase;
@@ -28,4 +38,9 @@
   font-weight: bold;
   font-size: 16rem;
   transition: background 0.3s;
+}
+@media (max-width: 400px) {
+  .menu_button {
+    font-size: 13rem;
+  }
 }

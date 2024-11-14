@@ -8,7 +8,11 @@
 .content_wrapper {
   display: flex;
 }
-
+@media (max-width: 1050px) {
+  .content_wrapper {
+    flex-direction: column;
+  }
+}
 /* Галерея фотографий */
 .photo {
   width: 50%;
@@ -19,6 +23,16 @@
     width: 80%;
     object-fit: cover;
     height: 95%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .photo {
+    width: 100%;
+    img {
+      width: 30%;
+      transform: rotate(40deg);
+    }
   }
 }
 
@@ -35,6 +49,11 @@
     text-align: left;
     font-weight: bold;
   }
+  @media (max-width: 400px) {
+    .subheading {
+      font-size: 26rem;
+    }
+  }
   .description {
     margin-top: 42rem;
     padding-left: 67rem;
@@ -44,5 +63,59 @@
     width: 80%;
     color: #747474;
     line-height: 1.6;
+  }
+  @media (max-width: 900px) {
+    .description {
+      font-size: 20rem;
+    }
+  }
+  @media (max-width: 1050px) {
+    .description {
+      margin-top: 42rem;
+      padding-left: 30rem;
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .text_content {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .text_content {
+    .title {
+      padding-top: 150rem;
+      padding-left: 700rem;
+    }
+    @media (max-width: 730px) {
+      .title {
+        padding-left: 600rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .title {
+        padding-left: 500rem;
+      }
+    }
+    @media (max-width: 500px) {
+      .title {
+        padding-left: 400rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .title {
+        margin-top: 300rem;
+        padding-left: 300rem;
+      }
+    }
+    @media (max-width: 300px) {
+      .title {
+        margin-top: 300rem;
+        padding-left: 200rem;
+      }
+    }
+    .description {
+      padding-left: 0;
+    }
   }
 }

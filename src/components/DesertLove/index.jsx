@@ -10,9 +10,11 @@ const DesertLove = () => {
         </div>
 
         <div className={style.text_content}>
-          <SectionTitle number={'03'} title={'Десерты с любовью'}/>
-          <p className={style.subheading}>Попробуйте десерты ручной работы в Москве</p>
-          <p className={style.description}>
+          <SectionTitle number={'03'} title={'Десерты с любовью'} />
+          <p className={style.subheading}>
+            Попробуйте десерты ручной работы в Москве
+          </p>
+          <div className={style.description}>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Mauris arcu
             quisque montes nulla placerat feugiat. Senectus nibh tempor et
             cubilia urna ut donec. Rutrum dictum condimentum consectetur
@@ -27,7 +29,7 @@ const DesertLove = () => {
             Augue vivamus ac porttitor sapien venenatis orci phasellus mauris
             lacus. Libero arcu curabitur nullam, viverra sodales pulvinar.
             Pulvinar nunc interdum volutpat consectetur ut netus faucibus fusce.
-          </p>
+          </div>
           <div className={style.btn_container}>
             <Button />
           </div>

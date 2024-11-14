@@ -6,8 +6,10 @@ const Goal = () => {
     <div className={style.about_section}>
       <div className={style.content_wrapper}>
         <div className={style.text_content}>
-          <SectionTitle number={'04'} title={'Моя цель'}/>
-          <p className={style.subheading}>Меня зовут Анна и Я Кондитер</p>
+          <div className={style.title}>
+            <SectionTitle number={'04'} title={'Моя цель'} />
+          </div>
+          <p className={style.subheading}>Сделать жизнь людей слаще</p>
           <p className={style.description}>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Mauris arcu
             quisque montes nulla placerat feugiat. Senectus nibh tempor et

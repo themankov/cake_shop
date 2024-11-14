@@ -73,7 +73,7 @@
     &_buttons {
       display: flex;
       flex-direction: column;
-  
+
       gap: 32rem;
     }
   }
@@ -101,9 +101,9 @@
       left: -30rem;
     }
   }
-  @media (max-width:800px){
+  @media (max-width: 800px) {
     .macaron_red {
-      scale: .7;
+      scale: 0.7;
     }
     @keyframes slideIn3 {
       0% {
@@ -117,7 +117,7 @@
       }
     }
   }
- 
+
   .macaron_white {
     top: 210rem;
     left: 0;
@@ -125,9 +125,9 @@
     z-index: -1;
     transition: transform 2s ease-in-out;
     animation: slideIn2 1.7s forwards ease-in-out,
-    float 6s infinite ease-in-out 0.5s;
+      float 6s infinite ease-in-out 0.5s;
   }
-  
+
   @keyframes slideIn2 {
     0% {
       left: -100%;
@@ -139,7 +139,7 @@
       left: 150rem;
     }
   }
-  @media (max-width:1100px){
+  @media (max-width: 1100px) {
     @keyframes slideIn2 {
       0% {
         left: -100%;
@@ -152,9 +152,9 @@
       }
     }
   }
-  @media (max-width:750px){
+  @media (max-width: 750px) {
     .macaron_white {
-      scale: .8;
+      scale: 0.8;
     }
     @keyframes slideIn2 {
       0% {
@@ -168,7 +168,7 @@
       }
     }
   }
-  @media (max-width:425px){
+  @media (max-width: 425px) {
     .macaron_white {
       top: 290rem;
     }
@@ -184,7 +184,7 @@
       }
     }
   }
-  @media (max-width:350px){
+  @media (max-width: 350px) {
     .macaron_white {
       top: 270rem;
     }
@@ -225,7 +225,7 @@
       left: 92rem;
     }
   }
-  @media (max-width:1500px){
+  @media (max-width: 1500px) {
     @keyframes slideIn {
       0% {
         left: -100%;
@@ -238,7 +238,7 @@
       }
     }
   }
-  @media (max-width:1200px){
+  @media (max-width: 1200px) {
     @keyframes slideIn {
       0% {
         left: -100%;
@@ -251,10 +251,10 @@
       }
     }
   }
-  @media (max-width:1100px){
+  @media (max-width: 1100px) {
     .macaron_rose {
       bottom: 10rem;
-      scale: .8;
+      scale: 0.8;
     }
     @keyframes slideIn {
       0% {
@@ -268,9 +268,9 @@
       }
     }
   }
-  @media (max-width:1100px){
+  @media (max-width: 1100px) {
     .macaron_rose {
-      scale: .75;
+      scale: 0.75;
     }
     @keyframes slideIn {
       0% {
@@ -284,7 +284,7 @@
       }
     }
   }
-  @media (max-width:600px){
+  @media (max-width: 600px) {
     .macaron_rose {
       bottom: 80rem;
     }
@@ -300,7 +300,7 @@
       }
     }
   }
-  @media (max-width:500px){
+  @media (max-width: 500px) {
     @keyframes slideIn {
       0% {
         left: -100%;
@@ -313,7 +313,7 @@
       }
     }
   }
-  @media (max-width:420px){
+  @media (max-width: 420px) {
     @keyframes slideIn {
       0% {
         left: -100%;
@@ -342,55 +342,52 @@
     width: 500rem;
     animation: slideIn4 1.5s ease-in-out;
   }
-  @media(max-width:1100px){
+  @media (max-width: 1100px) {
     .cake {
       width: 450rem;
       bottom: 50rem;
     }
   }
-  @media(max-width:900px){
+  @media (max-width: 900px) {
     .cake {
       width: 400rem;
       bottom: 100rem;
     }
   }
-  @media(max-width:750px){
+  @media (max-width: 750px) {
     .cake {
-
       bottom: 100rem;
     }
   }
-  @media(max-width:600px){
+  @media (max-width: 600px) {
     .cake {
       width: 300rem;
       bottom: 300rem;
     }
   }
-  @media(max-width:450px){
+  @media (max-width: 450px) {
     .cake {
       width: 250rem;
- 
     }
   }
-  @media(max-width:450px){
+  @media (max-width: 450px) {
     .cake {
       width: 250rem;
- 
     }
   }
-  @media(max-width:350px){
+  @media (max-width: 350px) {
     .cake {
       width: 220rem;
       bottom: 390rem;
     }
   }
-  @media(max-width:300px){
+  @media (max-width: 300px) {
     .cake {
       width: 180rem;
       bottom: 410rem;
     }
   }
-  @media(max-width:260px){
+  @media (max-width: 260px) {
     .cake {
       width: 150rem;
       bottom: 430rem;
@@ -411,7 +408,7 @@
     width: 123rem;
     animation: slideIn5 1.5s ease-in-out, float 6s infinite ease-in-out 1.5s;
   }
- 
+
   @keyframes slideIn5 {
     0% {
       right: -100%;
@@ -427,68 +424,66 @@
     .blueberry {
       right: 100rem;
     }
-      @keyframes slideIn5 {
-        0% {
-          right: -100%;
-        }
-        87% {
-          right: 120rem;
-        }
-        100% {
-          right: 100rem;
-        }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
       }
-    
+      87% {
+        right: 120rem;
+      }
+      100% {
+        right: 100rem;
+      }
+    }
   }
   @media (max-width: 950px) {
     .blueberry {
       right: 50rem;
     }
-      @keyframes slideIn5 {
-        0% {
-          right: -100%;
-        }
-        87% {
-          right: 70rem;
-        }
-        100% {
-          right: 50rem;
-        }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
       }
-    
+      87% {
+        right: 70rem;
+      }
+      100% {
+        right: 50rem;
+      }
+    }
   }
   @media (max-width: 800px) {
     .blueberry {
-      scale: .8;
+      scale: 0.8;
       right: 0rem;
     }
-      @keyframes slideIn5 {
-        0% {
-          right: -100%;
-        }
-        87% {
-          right: 20rem;
-        }
-        100% {
-          right: 0rem;
-        }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
       }
+      87% {
+        right: 20rem;
+      }
+      100% {
+        right: 0rem;
+      }
+    }
   }
   @media (max-width: 700px) {
     .blueberry {
       right: -30rem;
     }
-      @keyframes slideIn5 {
-        0% {
-          right: -100%;
-        }
-        87% {
-          right: -10rem;
-        }
-        100% {
-          right: -30rem;
-        }
+    @keyframes slideIn5 {
+      0% {
+        right: -100%;
       }
+      87% {
+        right: -10rem;
+      }
+      100% {
+        right: -30rem;
+      }
+    }
   }
   @media (max-width: 600px) {
     .blueberry {
@@ -561,7 +556,7 @@
     width: 92rem;
     animation: slideIn6 1.5s ease-in-out, float 6s infinite ease-in-out 0.8s;
   }
-  
+
   @keyframes slideIn6 {
     0% {
       right: -100%;
@@ -660,7 +655,6 @@
     width: 108rem;
     animation: slideIn7 1.5s ease-in-out, float 6s infinite ease-in-out 1.2s;
   }
-  
 
   @keyframes slideIn7 {
     0% {
@@ -763,7 +757,7 @@
     width: 239rem;
     animation: slideIn8 1.5s ease-in-out, float 6s infinite ease-in-out 1s;
   }
-  
+
   @keyframes slideIn8 {
     0% {
       right: -100%;
@@ -844,7 +838,6 @@
     .blackberry {
       bottom: 100rem;
     }
-    
   }
   @media (max-width: 350px) {
     .blackberry {
