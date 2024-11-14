@@ -1,8 +1,18 @@
 .about_section {
-  margin-top: 170rem;
+  padding-top: 170rem;
   position: relative;
   width: 100%;
   height: 100vh;
+}
+@media (max-width: 600px) {
+  .about_section {
+    height: 90vh;
+  }
+}
+@media (max-width: 400px) {
+  .about_section {
+    height: 80vh;
+  }
 }
 .content_wrapper {
   display: flex;
@@ -24,7 +34,7 @@
 @media (max-width: 800px) {
   .photo_gallery {
     width: 100%;
-    top: 250rem;
+    top:450rem;
     justify-content: center;
     position: absolute;
     flex-direction: row;
@@ -115,7 +125,7 @@
 @media (max-width: 800px) {
   .flower {
     top: 55vh;
-    left: 40%;
+    left: 30%;
     transform: rotate(310deg);
   }
 }

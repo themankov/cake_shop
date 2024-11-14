@@ -6,7 +6,6 @@ const Header = ({ data, setSelectedLink, innerRef }) => {
   const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
   const [showBar, setShowBar] = useState(false);
-  const [isActive,setIsActive]=useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +58,7 @@ const Header = ({ data, setSelectedLink, innerRef }) => {
         <Link
           onClick={() => {
             setSelectedLink(item);
+            showNavBar()
           }}
           className={style.activeLink}
         >
@@ -73,6 +73,7 @@ const Header = ({ data, setSelectedLink, innerRef }) => {
         }}
         onClick={() => {
           setSelectedLink(item);
+          showNavBar()
         }}
         className={`${item === activeSection ? style.activeLink : ''}`}
       >
@@ -85,12 +86,12 @@ const Header = ({ data, setSelectedLink, innerRef }) => {
       <div className={style.header_logo}>
         <h1>Cakes Smakaeva</h1>
       </div>
-      <div className={`${style.hamburger} ${isActive?style.active:''}`} onClick={()=>setIsActive((state)=>!state)}>
+      <div className={`${style.hamburger} ${showBar?style.active:''}`} onClick={showNavBar}>
         <div className={style.line}></div>
         <div className={style.line}></div>
         <div className={style.line}></div>
       </div>
-      <div className={`${style.header_nav} ${isActive?style.active:''}`}>
+      <div className={`${style.header_nav} ${showBar?style.active:''}`}>
         <ul>{dataLi}</ul>
       </div>
     </header>

@@ -17,7 +17,7 @@ const HeroSection = ({ innerRef }) => {
       </h1>
       <div className={style.hero_subtitle}>Кондитер Анна Смакаева</div>
       <div className={style.hero_buttons}>
-        <Button />
+        <Button innerContent={'telegram'}/>
         <Button />
       </div>
       <img

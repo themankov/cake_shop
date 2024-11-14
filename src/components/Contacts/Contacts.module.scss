@@ -1,14 +1,23 @@
 .contact_container {
   display: flex;
 }
-
+@media (max-width:700px){
+  .contact_container {
+    flex-direction: column;
+  }
+}
 /* Левая колонка: Связаться со мной */
 .contact_info {
   width: 50%;
   background-color: #271616;
   color: #ffffff;
 }
-
+@media (max-width:700px){
+  .contact_info {
+    width: 100%;
+    padding-bottom: 50rem;
+  }
+}
 .contact_info .description {
   padding-left: 60rem;
   font-size: 13rem;
@@ -18,10 +27,17 @@
   margin-top: 54rem;
   width: 70%;
 }
-
+@media (max-width:900px){
+  .contact_info .description {
+    font-size: 20rem;
+  }
+}
 /* Правая колонка: Контакты */
 .contact_details {
   width: 50%;
+  @media (max-width:700px){
+    width: 100%;
+  }
   ul {
     list-style: none;
     margin: 54rem;

@@ -50,7 +50,7 @@ return(
     </div>
 </div>
 <div className={style.buttons}>
-            <Button/>
+            <Button innerContent={'telegram'}/>
             <Button/>
         </div>
 </>
