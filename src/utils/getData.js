@@ -52,6 +52,7 @@ export async function loadJsonFile(filePath) {
     headers: {
       Authorization: `OAuth ${ACCESS_TOKEN}`,
     },
+
   });
 
   if (response.ok) {
@@ -76,6 +77,7 @@ async function getImageUrl(filePath) {
     headers: {
       Authorization: `OAuth ${ACCESS_TOKEN}`,
     },
+ 
   });
 
   if (response.ok) {
