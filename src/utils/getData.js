@@ -22,7 +22,7 @@ const ACCESS_TOKEN =
 // y0_AgAAAABpLP7zAADLWwAAAAEXc6WeAADAQDH86zJKj5USSGa7XLLGVQ44zQ
 
 export async function getFolderContents(folderPath) {
-  const url = `https://cloud-api.yandex.net/v1/disk/resources?path=${encodeURIComponent(
+  const url = `https://y-gamma-ecru.vercel.app/disk/resources?path=${encodeURIComponent(
     folderPath
   )}`;
 
@@ -43,46 +43,29 @@ export async function getFolderContents(folderPath) {
 }
 
 export async function loadJsonFile(filePath) {
-  const url = `https://cloud-api.yandex.net/v1/disk/resources/download?path=${encodeURIComponent(
-    filePath
-  )}`;
-
+  const url = `https://server-cake-1.onrender.com/disk${filePath}`;
   const response = await fetch(url, {
     method: 'GET',
-    headers: {
-      Authorization: `OAuth ${ACCESS_TOKEN}`,
-    },
-
   });
-
+  
   if (response.ok) {
     const data = await response.json();
-    const jsonUrl = data.href; // Получаем прямую ссылку на JSON-файл
-    const jsonResponse = await fetch(jsonUrl);
-    const jsonData = await jsonResponse.json();
-
-    return jsonData;
+    
+    return data;
   } else {
     console.error('Ошибка при загрузке JSON:', response.statusText);
   }
-}
+  } 
+
 // Функция для получения прямой ссылки на изображение
 async function getImageUrl(filePath) {
-  const url = `https://cloud-api.yandex.net/v1/disk/resources/download?path=${encodeURIComponent(
-    filePath
-  )}`;
-
+  const url = `https://server-cake-1.onrender.com/disk${filePath}`;
   const response = await fetch(url, {
     method: 'GET',
-    headers: {
-      Authorization: `OAuth ${ACCESS_TOKEN}`,
-    },
- 
   });
-
+  
   if (response.ok) {
-    const data = await response.json();
-    return data.href;
+    return response.url;
   } else {
     console.error(
       'Ошибка при получении ссылки на изображение:',
@@ -106,6 +89,7 @@ export async function prepareDisplayData(
   debugger;
   const endOffset = currentOffset + limit;
   const jsonData = await loadJsonFile(jsonFilePath);
+  console.log(jsonData)
   const displayData = await Promise.all(
     jsonData.map(async (item, index) => {
       if (input) {
