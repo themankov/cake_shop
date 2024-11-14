@@ -52,8 +52,10 @@
 @media(max-width:800px){
     .content {
         flex-direction: column;
+        height: auto;
         align-items: center;
         position: relative;
+        margin-bottom: 50rem;
         .cake_image{
             position: absolute;
             top: 0;
@@ -75,8 +77,7 @@
             }
             @media (max-width:600px){
                 .cake_description {
-                    list-style: '-';
-                    margin-top: 150rem;
+                    margin-top: 100rem;
                     width: 95%;
                     li {
                         font-size: 30rem;
@@ -87,7 +88,8 @@
             @media (max-width:450px){
                 .cake_description {
                     list-style: '-';
-                    margin-top: 220rem;
+                    margin-top: 20rem;
+                    margin-bottom: 10rem;
                     width: 100%;
                     li {
                         font-size: 35rem;
@@ -109,5 +111,6 @@
         flex-direction: column;
         align-items: center;
         gap: 32rem;
+        margin-bottom: 50rem;
     }
 }
