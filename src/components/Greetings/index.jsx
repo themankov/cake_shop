@@ -2,7 +2,7 @@ import { SectionTitle } from '../index';
 import style from './Greetings.module.scss';
 import girl from '../../images/girl.jpg';
 import cake2 from '../../images/cake2.jpg';
-import pancakes from '../../images/pancakes.png';
+import cake3 from '../../images/cake3.jpg';
 import donut from '../../images/donut.png';
 import flower from '../../images/flower.png';
 
@@ -27,7 +27,7 @@ const Greetings = ({ innerRef }) => {
             <img src={cake2} alt="Торт" />
           </div>
           <div className={`${style.card} ${style.card_3}`}>
-            <img src={pancakes} alt="Пирожные" />
+            <img src={cake3} alt="Торт" />
           </div>
           <img
             src={donut}
@@ -37,24 +37,24 @@ const Greetings = ({ innerRef }) => {
         </div>
 
         <div className={style.text_content}>
-          <div className={style.title}><SectionTitle number={'01'} title={'Познакомимся'} /></div>
-          
-          <p className={style.subheading}>Меня зовут Анна и Я Кондитер</p>
+          <div className={style.title}>
+            <SectionTitle number={'01'} title={'Познакомимся'} />
+          </div>
+
+          <p className={style.subheading}>
+            Меня зовут Анна и я дипломированный кондитер!
+          </p>
           <p className={style.description}>
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Mauris arcu
-            quisque montes nulla placerat feugiat. Senectus nibh tempor et
-            cubilia urna ut donec. Rutrum dictum condimentum consectetur
-            condimentum dolor orci rhoncus.
+            Я обожаю создавать сладкие шедевры! Я занимаюсь кондитерским делом и
+            превращаю простые ингредиенты в торты, десерты и другие вкусные
+            чудеса.
             <br />
             <br />
-            Cursus egestas bibendum sociosqu habitasse per. Libero himenaeos
-            ipsum condimentum condimentum nam justo hac. Suspendisse interdum
-            blandit tellus; lobortis quisque ultricies turpis.
+            Каждое мое изделие — это не просто лакомство, а маленькая история,
+            созданная с любовью и вниманием к деталям. Будь то торжественный
+            свадебный торт или необычный десерт для вечеринки — я готова
+            воплощать Ваши самые сладкие мечты в реальность.
             <br />
-            <br />
-            Augue vivamus ac porttitor sapien venenatis orci phasellus mauris
-            lacus. Libero arcu curabitur nullam, viverra sodales pulvinar.
-            Pulvinar nunc interdum volutpat consectetur ut netus faucibus fusce.
           </p>
         </div>
       </div>

@@ -1,15 +1,9 @@
 .about_section {
   margin-top: 170rem;
-
   position: relative;
   width: 100%;
-  height: 70vh;
 }
-@media (max-width: 900px) {
-  .about_section {
-    height: 90vh;
-  }
-}
+
 .content_wrapper {
   display: flex;
 }
@@ -21,21 +15,23 @@
 /* Галерея фотографий */
 .photo {
   width: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
   img {
     width: 80%;
-    object-fit: cover;
+    object-fit: contain;
     height: 95%;
   }
 }
 
 @media (max-width: 1050px) {
   .photo {
+    padding-top: 150rem;
     width: 100%;
     img {
-      width: 30%;
+      width: 50%;
       transform: rotate(40deg);
     }
   }
@@ -60,14 +56,26 @@
     }
   }
   .description {
-    margin-top: 42rem;
+    margin-top: 5rem;
     padding-left: 67rem;
-    font-family: 'Roboto flex';
-    font-weight: bold;
-    font-size: 13rem;
     width: 80%;
-    color: #747474;
-    line-height: 1.6;
+
+    * {
+      font-family: 'Roboto flex';
+      font-weight: bold;
+      font-size: 13rem;
+      color: #747474;
+      line-height: 1.6;
+      list-style: none;
+    }
+    h2 {
+      font-size: 25rem;
+      color: #000;
+    }
+    h4 {
+      font-size: 18rem;
+      color: #743e2a;
+    }
   }
   @media (max-width: 900px) {
     .description {
@@ -83,6 +91,10 @@
     .description {
       margin-top: 42rem;
       padding-left: 30rem;
+
+      * {
+        font-size: 20rem;
+      }
     }
   }
 }
@@ -94,7 +106,6 @@
 @media (max-width: 800px) {
   .text_content {
     .title {
-      padding-top: 150rem;
       padding-left: 700rem;
     }
     @media (max-width: 730px) {

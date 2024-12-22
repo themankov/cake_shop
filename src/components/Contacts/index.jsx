@@ -13,19 +13,20 @@ const Contacts = ({ innerRef }) => {
       <div className={style.contact_container}>
         <div className={style.contact_info}>
           <SectionTitle
-            number={'01'}
+            number={'06'}
             title={'Связаться со мной'}
             brown={'True'}
           />
           <p className={style.description}>
-            Lorem ipsum dolor amet, consectetur adipiscing elit. Mauris arcu
-            quisque montes nulla placerat feugiat. Senectus nibh tempor et
-            cubilia ur ut donec.
+            Хотите сделать праздник незабываемым? Напишите мне, и мы вместе
+            создадим идеальный торт специально для вашего мероприятия.
+            Индивидуальный подход, вкусные начинки и стильный декор — все для
+            вашего удовольствия!
           </p>
         </div>
 
         <div className={style.contact_details}>
-          <SectionTitle number={'02'} title={'Контакты'} />
+          <SectionTitle number={'07'} title={'Контакты'} />
           <ul>
             <li>
               <img src={geo} alt="geo" /> <h1>Москва</h1>
