@@ -47,15 +47,15 @@ export async function loadJsonFile(filePath) {
   const response = await fetch(url, {
     method: 'GET',
   });
-  
+
   if (response.ok) {
     const data = await response.json();
-    
+
     return data;
   } else {
     console.error('Ошибка при загрузке JSON:', response.statusText);
   }
-  } 
+}
 
 // Функция для получения прямой ссылки на изображение
 async function getImageUrl(filePath) {
@@ -63,7 +63,7 @@ async function getImageUrl(filePath) {
   const response = await fetch(url, {
     method: 'GET',
   });
-  
+
   if (response.ok) {
     return response.url;
   } else {
@@ -86,14 +86,13 @@ export async function prepareDisplayData(
   if (page === 'menu') {
     currentOffset = offset;
   }
-  debugger;
   const endOffset = currentOffset + limit;
   const jsonData = await loadJsonFile(jsonFilePath);
-  console.log(jsonData)
+  console.log(jsonData);
   const displayData = await Promise.all(
     jsonData.map(async (item, index) => {
       if (input) {
-        if (item.name.startsWith(input.trim())) {
+        if (item.name.toLowerCase().startsWith(input.trim().toLowerCase())) {
           const imageUrl = await getImageUrl(item.imagePath);
           return {
             id: item.id,
