@@ -48,10 +48,9 @@ const MenuPage = () => {
 
   useEffect(() => {
     const loadMoreData = async () => {
-      console.log(loadMoreRef.current)
-      debugger;
+      console.log(loadMoreRef.current);
 
-      const offset = (page-1) * PAGE_SIZE;
+      const offset = (page - 1) * PAGE_SIZE;
       await fetchData('menu', offset);
     };
 
@@ -68,9 +67,9 @@ const MenuPage = () => {
       fetchData(0, 0, debouncedInputValue);
     } else {
       // Если текст отсутствует, загружаем данные по умолчанию
-      
-        fetchData(0, 0); // Первая страница без фильтрации
-      
+
+      fetchData(0, 0); // Первая страница без фильтрации
+
       setPage(1); // Сбрасываем страницу
     }
   }, [debouncedInputValue]);
@@ -80,17 +79,14 @@ const MenuPage = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && isMounted.current) {
-        
           if (isInputMode.current) return;
           setPage((prevPage) => prevPage + 1); // Увеличиваем страницу для подгрузки новых данных
         }
       },
-      { rootMargin: '100px',
-        threshold: .1 }
+      { rootMargin: '100px', threshold: 0.1 }
     );
 
     if (loadMoreRef.current) {
-      debugger
       observer.observe(loadMoreRef.current);
     }
     return () => {
@@ -131,7 +127,10 @@ const MenuPage = () => {
       </div>
 
       {/* Элемент для отслеживания конца списка */}
-      <div className={`intersection-observer ${style.intersection}`} ref={loadMoreRef}></div>
+      <div
+        className={`intersection-observer ${style.intersection}`}
+        ref={loadMoreRef}
+      ></div>
     </div>
   );
 };

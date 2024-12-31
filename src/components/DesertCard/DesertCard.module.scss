@@ -1,12 +1,12 @@
 .dessert_item {
   text-align: center;
-  height: 340rem;
+  height: auto;
   cursor: pointer;
   overflow: hidden;
 
   .image_container {
     margin: 0 auto;
-    width: 320rem;
+    width: 70%;
     height: 207rem;
     display: flex;
     justify-content: center;
@@ -16,10 +16,10 @@
     img {
       width: auto;
       height: 100%;
-      object-fit: cover;
     }
   }
   h3 {
+    padding-top: 5rem;
     font-size: 25rem;
     font-family: 'Roboto flex';
     font-weight: bold;
